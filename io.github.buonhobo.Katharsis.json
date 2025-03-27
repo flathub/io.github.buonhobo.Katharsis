@@ -1,7 +1,7 @@
 {
   "id": "io.github.buonhobo.Katharsis",
   "runtime": "org.gnome.Platform",
-  "runtime-version": "47",
+  "runtime-version": "48",
   "sdk": "org.gnome.Sdk",
   "command": "Katharsis",
   "finish-args": [
@@ -12,10 +12,18 @@
     "--filesystem=/run/docker.sock"
   ],
   "modules": [
-    "python3-requirements.json",
-    "python3-pyyaml.json",
-    "python3-hatchling.json",
-    "python3-pygments.json",
+    "pypi-dependencies.json",{
+      "name" : "fast_float",
+      "buildsystem" : "cmake-ninja",
+      "sources" : [
+          {
+              "type" : "git",
+              "url" : "https://github.com/fastfloat/fast_float.git",
+              "branch" : "main"
+          }
+      ]
+  },
+
     {
       "name": "vte",
       "buildsystem": "meson",
@@ -24,7 +32,7 @@
         {
           "type": "git",
           "url": "https://gitlab.gnome.org/GNOME/vte.git",
-          "tag": "0.78.0"
+          "tag": "0.80.0"
         }
       ]
     },
@@ -36,14 +44,12 @@
         "cp -r src /app/share/Katharsis",
         "install -Dm755 Katharsis /app/bin/Katharsis",
         "install -Dm755 data/io.github.buonhobo.Katharsis.desktop /app/share/applications/io.github.buonhobo.Katharsis.desktop",
-        "install -Dm755 data/Katharsis.svg /app/share/icons/hicolor/scalable/apps/io.github.buonhobo.Katharsis.svg",
-        "install -Dm755 data/io.github.buonhobo.Katharsis.metainfo.xml /app/share/metainfo/io.github.buonhobo.Katharsis.metainfo.xml"
+        "install -Dm755 data/Katharsis.svg /app/share/icons/hicolor/scalable/apps/io.github.buonhobo.Katharsis.svg"
       ],
       "sources": [
         {
-          "type": "git",
-          "url": "https://github.com/BuonHobo/Katharsis.git",
-          "commit": "f701d5b4073cc7b0221a53a78b0ac98269b76cbd"
+          "type": "dir",
+          "path": "../"
         },
         {
           "type": "script",
