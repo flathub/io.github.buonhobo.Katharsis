@@ -12,18 +12,18 @@
     "--filesystem=/run/docker.sock"
   ],
   "modules": [
-    "pypi-dependencies.json",{
+    "pypi-dependencies.json",
+    {
       "name" : "fast_float",
       "buildsystem" : "cmake-ninja",
       "sources" : [
           {
               "type" : "git",
               "url" : "https://github.com/fastfloat/fast_float.git",
-              "branch" : "main"
+              "tag" : "v8.0.2"
           }
       ]
-  },
-
+    },
     {
       "name": "vte",
       "buildsystem": "meson",
