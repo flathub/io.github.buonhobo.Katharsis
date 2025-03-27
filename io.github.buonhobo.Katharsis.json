@@ -44,7 +44,8 @@
         "cp -r src /app/share/Katharsis",
         "install -Dm755 Katharsis /app/bin/Katharsis",
         "install -Dm755 data/io.github.buonhobo.Katharsis.desktop /app/share/applications/io.github.buonhobo.Katharsis.desktop",
-        "install -Dm755 data/Katharsis.svg /app/share/icons/hicolor/scalable/apps/io.github.buonhobo.Katharsis.svg"
+        "install -Dm755 data/Katharsis.svg /app/share/icons/hicolor/scalable/apps/io.github.buonhobo.Katharsis.svg",
+        "install -Dm755 data/io.github.buonhobo.Katharsis.metainfo.xml /app/share/metainfo/io.github.buonhobo.Katharsis.metainfo.xml"
       ],
       "sources": [
         {
