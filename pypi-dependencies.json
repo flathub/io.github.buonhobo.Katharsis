@@ -4,6 +4,20 @@
     "build-commands": [],
     "modules": [
         {
+            "name": "python3-pyuv",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \".\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/saghul/pyuv.git",
+                    "commit": "2a3d42d44c6315ebd73899a35118380d2d5979b5"
+                }
+            ]
+        },
+        {
             "name": "python3-appdirs",
             "buildsystem": "simple",
             "build-commands": [
@@ -183,6 +197,11 @@
                 },
                 {
                     "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/54/21/f43f0a1fa8b06b32812e0975981f4677d28e0f3271601dc88ac5a5b83220/setuptools-78.1.0-py3-none-any.whl",
+                    "sha256": "3e386e96793c8702ae83d17b853fb93d3e09ef82ec62722e61da5cd22376dcd8"
+                },
+                {
+                    "type": "file",
                     "url": "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl",
                     "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"
                 }
@@ -212,8 +231,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/77/89/bc88a6711935ba795a679ea6ebee07e128050d6382eaa35a0a47c8032bdc/pyasn1_modules-0.4.1-py3-none-any.whl",
-                    "sha256": "49bfa96b45a292b711e986f222502c1c9a5e1f4e568fc30e2574a6c7d07838fd"
+                    "url": "https://files.pythonhosted.org/packages/47/8d/d529b5d697919ba8c11ad626e835d4039be708a35b0d22de83a269a6682c/pyasn1_modules-0.4.2-py3-none-any.whl",
+                    "sha256": "29253a9207ce32b64c3ac6600edc75368f98473906e8fd1043bd6b5b1de2c14a"
                 },
                 {
                     "type": "file",
@@ -345,8 +364,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/77/89/bc88a6711935ba795a679ea6ebee07e128050d6382eaa35a0a47c8032bdc/pyasn1_modules-0.4.1-py3-none-any.whl",
-                    "sha256": "49bfa96b45a292b711e986f222502c1c9a5e1f4e568fc30e2574a6c7d07838fd"
+                    "url": "https://files.pythonhosted.org/packages/47/8d/d529b5d697919ba8c11ad626e835d4039be708a35b0d22de83a269a6682c/pyasn1_modules-0.4.2-py3-none-any.whl",
+                    "sha256": "29253a9207ce32b64c3ac6600edc75368f98473906e8fd1043bd6b5b1de2c14a"
                 },
                 {
                     "type": "file",
@@ -382,6 +401,11 @@
                     "type": "file",
                     "url": "https://files.pythonhosted.org/packages/49/97/fa78e3d2f65c02c8e1268b9aba606569fe97f6c8f7c2d74394553347c145/rsa-4.9-py3-none-any.whl",
                     "sha256": "90260d9058e514786967344d0ef75fa8727eed8a7d2e43ce9f4bcf1b536174f7"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/54/21/f43f0a1fa8b06b32812e0975981f4677d28e0f3271601dc88ac5a5b83220/setuptools-78.1.0-py3-none-any.whl",
+                    "sha256": "3e386e96793c8702ae83d17b853fb93d3e09ef82ec62722e61da5cd22376dcd8"
                 },
                 {
                     "type": "file",
@@ -464,8 +488,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/77/89/bc88a6711935ba795a679ea6ebee07e128050d6382eaa35a0a47c8032bdc/pyasn1_modules-0.4.1-py3-none-any.whl",
-                    "sha256": "49bfa96b45a292b711e986f222502c1c9a5e1f4e568fc30e2574a6c7d07838fd"
+                    "url": "https://files.pythonhosted.org/packages/47/8d/d529b5d697919ba8c11ad626e835d4039be708a35b0d22de83a269a6682c/pyasn1_modules-0.4.2-py3-none-any.whl",
+                    "sha256": "29253a9207ce32b64c3ac6600edc75368f98473906e8fd1043bd6b5b1de2c14a"
                 },
                 {
                     "type": "file",
@@ -635,7 +659,7 @@
             "name": "python3-pyasn1_modules",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyasn1_modules==0.4.1\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyasn1_modules==0.4.2\" --no-build-isolation"
             ],
             "sources": [
                 {
@@ -645,8 +669,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/77/89/bc88a6711935ba795a679ea6ebee07e128050d6382eaa35a0a47c8032bdc/pyasn1_modules-0.4.1-py3-none-any.whl",
-                    "sha256": "49bfa96b45a292b711e986f222502c1c9a5e1f4e568fc30e2574a6c7d07838fd"
+                    "url": "https://files.pythonhosted.org/packages/47/8d/d529b5d697919ba8c11ad626e835d4039be708a35b0d22de83a269a6682c/pyasn1_modules-0.4.2-py3-none-any.whl",
+                    "sha256": "29253a9207ce32b64c3ac6600edc75368f98473906e8fd1043bd6b5b1de2c14a"
                 }
             ]
         },
@@ -808,8 +832,13 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ca/89/ea9669a0a76b160ffb312d0b02b15bad053c1bc81d2a54e42e3a402ca754/types_setuptools-76.0.0.20250313-py3-none-any.whl",
-                    "sha256": "bf454b2a49b8cfd7ebcf5844d4dd5fe4c8666782df1e3663c5866fd51a47460e"
+                    "url": "https://files.pythonhosted.org/packages/54/21/f43f0a1fa8b06b32812e0975981f4677d28e0f3271601dc88ac5a5b83220/setuptools-78.1.0-py3-none-any.whl",
+                    "sha256": "3e386e96793c8702ae83d17b853fb93d3e09ef82ec62722e61da5cd22376dcd8"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/7d/31/85d0264705d8ef47680d28f4dc9bb1e27d8cace785fbe3f8d009fad6cb88/types_setuptools-78.1.0.20250329-py3-none-any.whl",
+                    "sha256": "ea47eab891afb506f470eee581dcde44d64dc99796665da794da6f83f50f6776"
                 }
             ]
         },
@@ -862,6 +891,20 @@
             ]
         },
         {
+            "name": "python3-setuptools",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"setuptools==78.1.0\" --ignore-installed --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/54/21/f43f0a1fa8b06b32812e0975981f4677d28e0f3271601dc88ac5a5b83220/setuptools-78.1.0-py3-none-any.whl",
+                    "sha256": "3e386e96793c8702ae83d17b853fb93d3e09ef82ec62722e61da5cd22376dcd8"
+                }
+            ]
+        },
+        {
             "name": "python3-six",
             "buildsystem": "simple",
             "build-commands": [
@@ -893,13 +936,18 @@
             "name": "python3-types-setuptools",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"types-setuptools==76.0.0.20250313\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"types-setuptools==78.1.0.20250329\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ca/89/ea9669a0a76b160ffb312d0b02b15bad053c1bc81d2a54e42e3a402ca754/types_setuptools-76.0.0.20250313-py3-none-any.whl",
-                    "sha256": "bf454b2a49b8cfd7ebcf5844d4dd5fe4c8666782df1e3663c5866fd51a47460e"
+                    "url": "https://files.pythonhosted.org/packages/54/21/f43f0a1fa8b06b32812e0975981f4677d28e0f3271601dc88ac5a5b83220/setuptools-78.1.0-py3-none-any.whl",
+                    "sha256": "3e386e96793c8702ae83d17b853fb93d3e09ef82ec62722e61da5cd22376dcd8"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/7d/31/85d0264705d8ef47680d28f4dc9bb1e27d8cace785fbe3f8d009fad6cb88/types_setuptools-78.1.0.20250329-py3-none-any.whl",
+                    "sha256": "ea47eab891afb506f470eee581dcde44d64dc99796665da794da6f83f50f6776"
                 }
             ]
         },
